@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta charset="utf-8">
+        <meta lang="en">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title>Hello, World!</title>
+    </head>
+    <body>
+       <div id="zero"></div>
+        <header>
+            <h1>The Ferrocious page</h1>
+        </header>
+        <nav>
+            <ul class="links-list">
+                <li><a href="#zero"><span class="fa fa-home" aria-hidden="true" aria-label="home"></span> / About&nbsp;me</a></li>
+                <!-- <li><a href="#about-me">About&nbsp;me</a></li> -->
+                <li><a href="#numeros">The&nbsp;app</a></li>
+                <li><a href="#tetrx">The&nbsp;game</a></li>                
+                <li><a href="#qiiya">QIIYA</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <section id="gadgets" class="gadgets-container offset-anchor">
+            <a href="https://fervero.github.io/html-tetris/" id="gadget-tetris" class="gadget">
+                <span id="score" class="score-display">0</span>
+                <div id="well"></div>
+                <h4 class="game-legend full-header">Do you want to play a game?</h4>
+                <h4 class="game-legend abbreviated-header">Play a game.</h4>
+            </a>
+            <a href="https://fervero.github.io/numeros/">
+               <div id="gadget-numeros" class="gadget">
+                    <h4 class="gadget-header full-header">Do you want to test your French?</h4>
+                    <h4 class="gadget-header abbreviated-header">Test your French.</h4>
+                    <div class="fake-button">123</div>
+                    <div class="fake-button">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                    <div class="fake-button">
+                        <i class="fa fa-phone"></i>
+                    </div>
+                </div>
+            </a>
+        </section>
+        <main id="about-me">
+            <section id="introduction">
+                <h2>About me</h2>
+                <p>First, take your time with a well-known game, or a small, yet genuinely useful app for language learning. Links above.</p>
+                <p>Now about me. <b>Maciej Bójko</b> is my name. For over a decade I've been a journalist. My field of expertise has been twofold: tech and science. I've written for <q>Gazeta Wyborcza</q>, <q>Dziennik</q> (before it merged and became <q>Dziennik Gazeta Prawna</q>), <q>Focus</q>, <q>Do Rzeczy</q>, <q>Polska - the Times</q>, Polska Agencja Prasowa, and others. As staff writer or freelancer. If you happen to recognize my name - very cool. If not, ah well. Not surprising. I'm not exactly a celebrity.</p>
+                <p>And I've decided that enough is enough. Time to reinvent myself, to decidedly change the career path. Let's be honest: do you recollect reading <em>any</em> press articles about dramatic shortages of journalists? About the huge market demand? About new newspapers and magazines launched, and thriving? About the business booming? Yeah. Right. Me neither. </p>
+                <p>Therefore: programming (beside being a journalist, I'm also a mathematician, or at least that's what written on my bachelor's diploma). And, more specifically, frontend development. I like the quirky JavaScript, with its informal approach. I like the logic of HTML and CSS. I truly enjoy problem solving. All said, the frontend seems like a perfectly reasonable future career. And so I sat down, cracked a book open, and started learning.</p>
+                <p>And the time came to put some out my stuff out there. The site is intended to be permanently <em>in progress</em>. I'll be putting more things here as soon as I can show them in public without feeling terribly ashamed. But, what is here now, is this.</p>
+                <hr>
+            </section>
+            <section id="numeros" class="offset-anchor"></section>
+                <h2>About <i><a href="https://fervero.github.io/numeros/">Numéros</a></i></h2>
+                <p>This project of mine was born out of a very specific need. See, as a part of that "reinvent myself" project, I decided to learn some new foreign languages. First and foremost, French (and also Spanish). It's hard! And one of numerous challenges is, understand spoken language. </p>
+                <p>With a sentence, with a piece of dialogue, a description, a story, if you missed something, if you didn't hear right, if you don't know the word - you can still try infer the meaning from context. You might even succeed, or be "close enough". With numbers, however, it isn't so. If you got it wrong, you're doomed. With a phone number, there's no "close enough", there's no "I get the general meaning". And the apps I found in the Google Play store were sadly limited. So I wrote one for myself.</p>
+                <p>Now, it isn't <em>exactly</em> cross-browser. The Web Speech API's support from platform to platform is haphazard. Chrome's, for example, is uniformly excellent. Natural sounding voices, several supported languages. No matter, Windows, Linux or mobile. With other browsers, however - hit and miss. What languages will be supported, I can't know. The application must find out for itself, and handle it. It does. I wrote three other language versions - the French is the basic - to increase the chance that your browser will be able to say <em>something</em> at all. Writing an additional language controller amounts to adding a dozen very straightforward lines. And that includes handling the fact that in French, the telephone number is recited in groups of two digits (or so I've been led to believe by a book), and in English they say the date in the month-day-year order. I do hope you appreciate the program's construction.</p>
+                <hr>
+            <section id="tetrx" class="offset-anchor">
+                <h2>The <a href="https://fervero.github.io/html-tetris/">falling bricks game</a></h2>
+                <p>That I decided to write as an exercise for myself. The clone of <s>arguably</s> one of the best, most influential games ever. Of course you know it, and you know its name, although I'm not sure if I'm allowed to use it, it is, after all, someone's trade mark. So let's stay with "the falling bricks game".</p>
+                <p> To make it more "frontendy" (if I may be forgiven the <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/BuffySpeak">Buffy speak</a>), I decided against using the canvas. Instead, it's all HTML elements. Every basic square is a <code>div</code>. Not only it forced me to learn quite a lot about positioning, it also had some unforeseen benefit. Calculating elements' sizes, positioning them, even resizing the game itself (it goes up to 18 squares wide - purely an arbitrary choice) takes very few lines of code! I make CSS, and the browser's engine, work for me. You can resize the browser, with a game still in progress, and everything, the well, the bricks, the panels, etc. will be redrawn to best fit the window. Come on, try it. That required exactly zero lines of JavaScript. I believe that's what they call "responsive Web design".</p>
+                <hr>
+            </section>
+            <section id="qiiya" class="offset-anchor">
+                <h2>QIIYA</h2>
+                <p>As I can't honestly claim I have any "Frequently Asked Questions", I give you "Questions I Imagine You Asking" instead. 
+                </p>
+                <dl class="accordion">
+                    <dt>What's with the English?</dt>
+                    <dd>
+                        <p>Well, in the best-case scenario, you're someone <em>at least</em> considering offering me a job. And soon enough you'll be asking the inevitable "how's your English". </p>
+                        <p>It's adequate, for all intents and purposes. English is just as essential for a tech/science journalist, as it is for a programmer.</p>
+                    </dd>
+                    <dt>Why wouldn't he use some SPA framework?</dt>
+                    <dd>
+                        <p>A perfectly valid question, sir or ma'am. The answer is, I'm not fluent in single page applications frameworks. Yet. But yes, I did notice how much code did I have devote for event-handlers, windows, templates. </p>
+                        <p>For this reason, among others, Angular, and/or React, are very high on my list of things to learn in the nearest future. When I master one of them, surely some angular and/or reacty stuff will be posted here.  </p>
+                    </dd>
+                    <dt>The Falling Bricks Game isn't pixel-perfect.</dt>
+                    <dd>
+                        <p>Well spotted, if you did spot that. It is not. The percents as units of distance cause some rounding errors, no matter how many decimal places. It's a tradeoff I consciously accepted in exchange for the marvelous responsiveness. I use some tricks here in order to mask that. <code>Box-shadows</code>, mostly. </p>
+                        <p>Coincidentally, the "shaking" (randomly rotating by a slight angle) the fallen bricks was not intended for that purpose. I did it very early in the development process. Simply, I liked the aesthetics. I thought that the squares, mimicking a haphazard pile of rocks, looked neat (by not looking neat). I hope you agree.</p>  
+                    </dd>
+                    <dt>"Genuinely useful", you say?</dt>
+                    <dd>
+                        <p>About the <a href="numeros.html">Numéros</a> app, yes. Honest to blog. My recognition of rapidly spoken numbers, in the language where "97" is pronounced as <i>quatre-vingt-dix-sept</i> (<q>four twenties-seventeen</q>), noticeably improved. Feel free to use it, if you happen to have the same problem that I did. Hey, for all I know you could have a foreign friend in the process of learning Polish. Maybe they'll find my little app useful.</p>
+                    </dd>
+                    <dt><q>fervero</q>? Does it mean something?</dt>
+                    <dd>It's short for <em>Ferocious Veldt Roarer</em>. It's inspired by George R. R. Martin, of the <q>A Song of Ice And Fire</q> fame. I needed a nickname for the <a href="http://asoiaf.westeros.org/">Westeros.org</a> discussion board, and to steal one from a book by GRRM seemed fitting. I'm not explaining the joke further, but I do recommend reading his <q>Tuf Voyaging</q>.</dd>
+                </dl>
+            </section>        
+        </main>
+        <footer id="contact" class="offset-anchor">
+           <h3>Mail me.</h3>
+            <p>email: <a href="mailto:maciej.bojko@gmail.com">maciej.bojko@gmail.com</a></p>
+            <h3>Github:</h3>
+            <p><a href="https://github.com/fervero/">https://github.com/fervero/</a></p>
+        </footer>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/abstract4game.js"></script>
+    <script src="js/auto4game.js"></script>
+    <script src="js/html4game.js"></script>
+    <script src="js/script.js"></script>
+</html>
