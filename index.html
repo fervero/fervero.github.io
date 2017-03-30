@@ -1,11 +1,11 @@
 <!doctype html>
-<html>
+<html lang='en'>
     <head>
-        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-        <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Dancing+Script" rel="stylesheet">
+<!--         <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700|Roboto+Mono" rel="stylesheet"> -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css">        
         <meta charset="utf-8">
-        <meta lang="en">
         <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
         <title>FVR's Home Page</title>
     </head>
@@ -17,9 +17,8 @@
         <nav>
             <ul class="links-list">
                 <li><a href="#zero"><span class="fa fa-home" aria-hidden="true" aria-label="home"></span> / About&nbsp;me</a></li>
-                <!-- <li><a href="#about-me">About&nbsp;me</a></li> -->
-                <li><a href="#numeros">The&nbsp;app</a></li>
-                <li><a href="#tetrx">The&nbsp;game</a></li>                
+                <li><a href="#numeros">The&nbsp;apps</a></li>
+                <li><a href="#tetrx">The&nbsp;games</a></li>                
                 <li><a href="#qiiya">QIIYA</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -32,7 +31,7 @@
                 <h4 class="game-legend abbreviated-header">Play a game.</h4>
             </a>
             <a href="https://fervero.github.io/numeros/">
-               <div id="gadget-numeros" class="gadget">
+               <div class="gadget gadget-numeros">
                     <h4 class="gadget-header full-header">Do you want to test your French?</h4>
                     <h4 class="gadget-header abbreviated-header">Test your French.</h4>
                     <div class="fake-button">123</div>
@@ -52,25 +51,46 @@
                 <p>Now about me. <b>Maciej Bójko</b> is my name. For over a decade I've been a journalist. My field of expertise has been twofold: tech and science. I've written for <q>Gazeta Wyborcza</q>, <q>Dziennik</q> (before it merged and became <q>Dziennik Gazeta Prawna</q>), <q>Focus</q>, <q>Do Rzeczy</q>, <q>Polska - the Times</q>, Polska Agencja Prasowa, and others. As staff writer or freelancer. If you happen to recognize my name - very cool. If not, ah well. Not surprising. I'm not exactly a celebrity.</p>
                 <p>And I've decided that enough is enough. Time to reinvent myself, to decidedly change the career path. Let's be honest: do you recollect reading <em>any</em> press articles about dramatic shortages of journalists? About the huge market demand? About new newspapers and magazines launched, and thriving? About the business booming? Yeah. Right. Me neither. </p>
                 <p>Therefore: programming (beside being a journalist, I'm also a mathematician, or at least that's what written on my bachelor's diploma). And, more specifically, frontend development. I like the quirky JavaScript, with its informal approach. I like the logic of HTML and CSS. I truly enjoy problem solving. All said, the frontend seems like a perfectly reasonable future career. And so I sat down, cracked a book open, and started learning.</p>
-                <p>And the time came to put some out my stuff out there. The site is intended to be permanently <em>in progress</em>. I'll be putting more things here as soon as I can show them in public without feeling terribly ashamed. But, what is here now, is this.</p>
+                <p>Besides Polish, English, <em>some</em> French, Russian and Spanish (for varying values of <q>some</q>), I speak HTML, CSS, JavaScript, I'm familiar with Git, Bootstrap, SASS, AngularJS, and I'm adding new stuff to that list every week.</p>
+                <p>So, now came the time to put some out my stuff out there. The site is intended to be permanently <em>in progress</em>. I'll be putting more things here as soon as I can show them in public without feeling terribly ashamed. But, what is here now, is this.</p>
                 <hr>
             </section>
-            <section id="numeros" class="offset-anchor"></section>
-                <h2>About <i><a href="https://fervero.github.io/numeros/">Numéros</a></i></h2>
+            <section id="numeros" class="offset-anchor">
+                <h2>About the apps.</h2>
+                <h3><i><a href="https://fervero.github.io/numeros/">Numéros</a></i></h3>
+                <a href="https://fervero.github.io/numeros/"><img src="img/numeros.png" alt="screenshot from the Epidemic app" class="screenshot"></a>
+
                 <p>This project of mine was born out of a very specific need. See, as a part of that "reinvent myself" project, I decided to learn some new foreign languages. First and foremost, French (and also Spanish). It's hard! And one of numerous challenges is, understand spoken language. </p>
                 <p>With a sentence, with a piece of dialogue, a description, a story, if you missed something, if you didn't hear right, if you don't know the word - you can still try infer the meaning from context. You might even succeed, or be "close enough". With numbers, however, it isn't so. If you got it wrong, you're doomed. With a phone number, there's no "close enough", there's no "I get the general meaning". And the apps I found in the Google Play store were sadly limited. So I wrote one for myself.</p>
-                <p>Now, it isn't <em>exactly</em> cross-browser. The Web Speech API's support from platform to platform is haphazard. Chrome's, for example, is uniformly excellent. Natural sounding voices, several supported languages. No matter, Windows, Linux or mobile. With other browsers, however - hit and miss. What languages will be supported, I can't know. The application must find out for itself, and handle it. It does. I wrote three other language versions - the French is the basic - to increase the chance that your browser will be able to say <em>something</em> at all. Writing an additional language controller amounts to adding a dozen very straightforward lines. And that includes handling the fact that in French, the telephone number is recited in groups of two digits (or so I've been led to believe by a book), and in English they say the date in the month-day-year order. I do hope you appreciate the program's construction.</p>
+                <p>Now, it isn't <em>exactly</em> cross-browser. The Web Speech API's support from platform to platform is haphazard. Chrome's, for example, is uniformly excellent. Natural sounding voices, several supported languages. No matter, Windows, Linux or mobile. With other browsers, however - hit and miss. What languages will be supported, I can't know. The application must find out for itself, and handle it. It does. I wrote three other language versions - the French is the basic - to increase the chance that your browser will be able to say <em>something</em> at all. Writing an additional language controller amounts to adding a dozen very straightforward lines. And that includes handling the fact that in French, the telephone number is recited in groups of two digits (or so I've been led to believe), and in English they say the date in the month-day-year order. I hope you appreciate the app's construction.</p>
+                <p>Now, it has also an Angular version. Same functionality, one&ndash;third less code.</p>
+                <hr>
+                <h3><i><a href="https://fervero.github.io/epidemic/index-en.html">
+                    Epidemic
+                </a></i></h3>
+                <a href="https://fervero.github.io/epidemic/index-en.html"><img src="img/epidemia2.png" alt="screenshot from the Epidemic app" class="screenshot screenshot-even"></a>
+                <p>This project of mine was inspired by an animated GIF, visualizing the <a href="https://en.wikipedia.org/wiki/Herd_immunity">herd immunity</a>: basically, even if you yourself can't be vaccinated, <em>everyone else</em> (or close enough) being vaccinated will still protect you. You can see the original GIF <a href="http://imgur.com/gallery/8M7q8#J7LANQ4">here</a>. I ran with the idea. I kept the original colors: blue for the vaccinated, yellow for the unvaccinated, and red for the infected, dropped the <q>who was infected by whom</q> part of the graph &mdash; as it would only complicate the model with no real payoff &mdash; and wrote the thing.</p>
+                <p>Generally, I prefer writing stuff that is genuinely useful, even if its scope of usefulness be very narrow. Like <q>learn to recognize numbers spoken in French</q>, or <q>visualize how an infectious disease spreads</q> (I've heard of at least one teacher using my humble little app in class). I made some effort in order to make the code reusable.</p>
+                </section>
                 <hr>
             <section id="tetrx" class="offset-anchor">
                 <h2>The <a href="https://fervero.github.io/html-tetris/">falling bricks game</a></h2>
+                <a href="https://fervero.github.io/html-tetris/"><img src="img/tetrx.png" alt="screenshot from the Epidemic app" class="screenshot"></a>                
                 <p>That I decided to write as an exercise for myself. The clone of <s>arguably</s> one of the best, most influential games ever. Of course you know it, and you know its name, although I'm not sure if I'm allowed to use it, it is, after all, someone's trade mark. So let's stay with "the falling bricks game".</p>
                 <p> To make it more "frontendy" (if I may be forgiven the <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/BuffySpeak">Buffy speak</a>), I decided against using the canvas. Instead, it's all HTML elements. Every basic square is a <code>div</code>. Not only it forced me to learn quite a lot about positioning, it also had some unforeseen benefit. Calculating elements' sizes, positioning them, even resizing the game itself (it goes up to 18 squares wide - purely an arbitrary choice) takes very few lines of code! I make CSS, and the browser's engine, work for me. You can resize the browser, with a game still in progress, and everything, the well, the bricks, the panels, etc. will be redrawn to best fit the window. Come on, try it. That required exactly zero lines of JavaScript. I believe that's what they call "responsive Web design".</p>
                 <hr>
             </section>
+            <section id="shapes">
+                <h2>The Shapes game</h2>
+                <a href="https://fervero.github.io/Ballz/"><img src="img/shapes.png" alt="screenshot from the Epidemic app" class="screenshot screenshot-even"></a>                
+                <p>Not much of a game, that. It was just me learning CSS animations. It's minimalist on purpose. One button, which serves to start the game and then to pause it, no <q>game over</q> ever, no protection from the player cheating and shooting when the game's paused. </p>
+                <p>Notice that the JavaScript is relatively short. The whole script takes some 70-odd lines. I tried to make the CSS do for me as much work as possible.</p>
+                <p>I was also a little informal with the whole thing, UI and code both, although the latter is limited to silly sounding names of functions and variables. I hope I'll be forgiven.</p>
+            </section>
+            <hr>
             <section id="qiiya" class="offset-anchor">
                 <h2>QIIYA</h2>
-                <p>As I can't honestly claim I have any "Frequently Asked Questions", I give you "Questions I Imagine You Asking" instead. 
-                </p>
+                <p>As I can't honestly claim I have any "Frequently Asked Questions", I give you "Questions I Imagine You Asking" instead.</p>
                 <dl class="accordion">
                     <dt>What's with the English?</dt>
                     <dd>

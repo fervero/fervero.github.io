@@ -40,14 +40,14 @@ a {
 #gadget-tetris {
     border-color: $color-4;
 }
-#gadget-numeros > .fake-button {
+.gadget-numeros > .fake-button {
     color: $color-2;
     background-color: $color-4;    
 }
-#gadget-tetris, #gadget-numeros {
+#gadget-tetris, .gadget-numeros {
     background-color: $color-3;
 }
-#gadget-numeros {
+.gadget-numeros {
     background-color: $color-5;
     color: $color-1;
 }
@@ -56,6 +56,9 @@ a {
 html {
     font-family: 'Montserrat', sans-serif;
     font-size: 110%;
+}
+[lang='fr'] {
+    font-family: 'Dancing Script', cursive;
 }
 body {
     margin: 0;    
@@ -156,7 +159,6 @@ dl.accordion dt {
     max-width: 5rem;
     min-width: 5rem;
     height: 10rem;
-    //float: left;
     position: relative;
 }
 #well {
@@ -165,7 +167,10 @@ dl.accordion dt {
     position: absolute;
     top: 0;
 }
-#gadget-numeros {
+.screenshot {
+    max-width: 90%;
+}
+.gadget-numeros {
     z-index: 10;
 }
 .score-display {
@@ -177,7 +182,7 @@ dl.accordion dt {
     position: relative;
     top: 0.25em;
 }
-#gadget-numeros {
+.gadget-numeros {
     height: 10rem;
     margin-left: 0.5rem;
     display: flex;
@@ -247,6 +252,21 @@ main, footer, .gadgets-container {
         padding-top: 0.75em;
     }
     
+/*    #numeros .gadget-numeros {
+        max-width: 60%;
+        float: right;
+    }  */
+    .screenshot {
+        max-width: 50%;
+        float: left;
+        margin-right: 2rem;
+    }
+    .screenshot-even {
+        float: right;
+        margin-left: 2rem;
+        margin-right: 0;
+    }
+    
     nav {
         position: fixed;
         opacity: 0.9;
@@ -306,7 +326,7 @@ main, footer, .gadgets-container {
         display: none;
     }
     
-    #gadget-numeros {
+    .gadget-numeros {
         flex-flow: row wrap;
         
         .gadget-header {
