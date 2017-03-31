@@ -37,11 +37,7 @@ a {
   color: #b2afac; }
 
 html {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 110%; }
-
-[lang='fr'] {
-  font-family: 'Dancing Script', cursive; }
+  font-family: 'Montserrat', sans-serif; }
 
 body {
   margin: 0; }
@@ -68,20 +64,18 @@ nav {
   background-position: 0 0, 100% 0;
   background-repeat: no-repeat; }
   nav ul {
-    margin-top: 0;
-    padding: 0 0 0.5em 0;
+    padding: 0 0 0.3em 0;
+    font-size: 115%;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between; }
-    nav ul li {
-      list-style: none;
-      width: 40%;
-      align-self: flex-start;
-      text-align: left; }
-      nav ul li:nth-child(2n+1) {
-        padding: 0.5em 0 0 1.5em; }
-      nav ul li:nth-child(2n) {
-        padding: 0.5em 1.5em 0 0; }
+    justify-content: space-around; }
+
+.nav-link {
+  padding: 0.2em;
+  list-style: none;
+  align-self: flex-start;
+  text-align: left;
+  display: block; }
 
 footer {
   padding-bottom: 5rem; }
@@ -114,6 +108,9 @@ main a, footer a {
 
 .abbreviated-header {
   display: block; }
+
+.desktop {
+  display: none; }
 
 em {
   padding-right: 0.1em; }
@@ -216,10 +213,6 @@ main, footer, .gadgets-container {
     text-align: left;
     padding-top: 0.75em; }
 
-  /*    #numeros .gadget-numeros {
-          max-width: 60%;
-          float: right;
-      }  */
   .screenshot {
     max-width: 50%;
     float: left;
@@ -236,33 +229,32 @@ main, footer, .gadgets-container {
     top: 4.99rem;
     z-index: 10;
     bottom: auto; }
+    nav:hover {
+      opacity: 1; }
     nav ul {
       -ms-flex-pack: distribute;
       justify-content: space-around;
       align-content: space-around;
       width: 100%; }
-      nav ul li {
-        min-width: inherit;
-        -webkit-box-flex: 1;
-        -ms-flex: 1;
-        flex: 1;
-        display: inline-block;
-        text-align: center; }
-        nav ul li:nth-child(n) {
-          padding: 0.5em 0 0 0.5em; }
-        nav ul li:hover a {
-          text-decoration: underline; }
-        nav ul li:last-child {
-          padding-right: 2em; }
+
+  .nav-link {
+    min-width: inherit;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: inline-block;
+    text-align: center;
+    padding: 0.5em 0 0 0.5em; }
+    .nav-link:hover a {
+      text-decoration: underline; }
+    .nav-link:last-child {
+      padding-right: 2em; }
 
   footer {
     padding-bottom: 2rem; }
 
   main {
     padding-top: 2rem; }
-
-  nav:hover {
-    opacity: 1; }
 
   .offset-anchor {
     padding-top: 9rem;
@@ -296,7 +288,14 @@ main, footer, .gadgets-container {
       margin-left: 0.75rem; }
     .gadget-numeros .fake-button:last-of-type {
       margin-right: 0.75rem; } }
-@media (min-width: 35rem) {
+@media (min-width: 31rem) {
+  .desktop {
+    display: inline-block;
+    padding-left: 0.4em; }
+
+  .mobile {
+    display: none; } }
+@media (min-width: 40rem) {
   nav {
     font-size: initial; } }
 

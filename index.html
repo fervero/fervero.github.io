@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang='en'>
     <head>
-        <link href="https://fonts.googleapis.com/css?family=Montserrat|Dancing+Script" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 <!--         <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700|Roboto+Mono" rel="stylesheet"> -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/style.css">        
@@ -16,11 +16,11 @@
         </header>
         <nav>
             <ul class="links-list">
-                <li><a href="#zero"><span class="fa fa-home" aria-hidden="true" aria-label="home"></span> / About&nbsp;me</a></li>
-                <li><a href="#numeros">The&nbsp;apps</a></li>
-                <li><a href="#tetrx">The&nbsp;games</a></li>                
-                <li><a href="#qiiya">QIIYA</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li class='nav-link'><a href="#zero"><span class="fa fa-home mobile" aria-hidden="true" aria-label="home"></span><span class="desktop">About&nbsp;me</span></a></li>
+                <li class='nav-link'><a href="#numeros"><span class="mobile fa fa-window-restore"></span><span class="desktop">The&nbsp;apps</span></a></li>
+                <li class='nav-link'><a href="#tetrx"><span class="mobile fa fa-futbol-o"></span><span class="desktop">The&nbsp;games</span></a></li>     
+                <li class='nav-link'><a href="#qiiya"><span class="mobile fa fa-question-circle-o"></span><span class="desktop">QIIYA</span></a></li>
+                <li class='nav-link'><a href="#contact"><span class="mobile fa fa-envelope-o"></span><span class="desktop">Contact</span></a></li>
             </ul>
         </nav>
         <section id="gadgets" class="gadgets-container offset-anchor">
@@ -57,7 +57,9 @@
             </section>
             <section id="numeros" class="offset-anchor">
                 <h2>About the apps.</h2>
-                <h3><i><a href="https://fervero.github.io/numeros/">Numéros</a></i></h3>
+                <h3><i>
+                    <a href="https://fervero.github.io/numeros/">Numéros</a>
+                </i></h3>
                 <a href="https://fervero.github.io/numeros/"><img src="img/numeros.png" alt="screenshot from the Epidemic app" class="screenshot"></a>
 
                 <p>This project of mine was born out of a very specific need. See, as a part of that "reinvent myself" project, I decided to learn some new foreign languages. First and foremost, French (and also Spanish). It's hard! And one of numerous challenges is, understand spoken language. </p>
@@ -65,23 +67,28 @@
                 <p>Now, it isn't <em>exactly</em> cross-browser. The Web Speech API's support from platform to platform is haphazard. Chrome's, for example, is uniformly excellent. Natural sounding voices, several supported languages. No matter, Windows, Linux or mobile. With other browsers, however - hit and miss. What languages will be supported, I can't know. The application must find out for itself, and handle it. It does. I wrote three other language versions - the French is the basic - to increase the chance that your browser will be able to say <em>something</em> at all. Writing an additional language controller amounts to adding a dozen very straightforward lines. And that includes handling the fact that in French, the telephone number is recited in groups of two digits (or so I've been led to believe), and in English they say the date in the month-day-year order. I hope you appreciate the app's construction.</p>
                 <p>Now, it has also an Angular version. Same functionality, one&ndash;third less code.</p>
                 <hr>
-                <h3><i><a href="https://fervero.github.io/epidemic/index-en.html">
-                    Epidemic
-                </a></i></h3>
+                <h3><i>
+                    <a href="https://fervero.github.io/epidemic/index-en.html">Epidemic</a>
+                </i></h3>
                 <a href="https://fervero.github.io/epidemic/index-en.html"><img src="img/epidemia2.png" alt="screenshot from the Epidemic app" class="screenshot screenshot-even"></a>
                 <p>This project of mine was inspired by an animated GIF, visualizing the <a href="https://en.wikipedia.org/wiki/Herd_immunity">herd immunity</a>: basically, even if you yourself can't be vaccinated, <em>everyone else</em> (or close enough) being vaccinated will still protect you. You can see the original GIF <a href="http://imgur.com/gallery/8M7q8#J7LANQ4">here</a>. I ran with the idea. I kept the original colors: blue for the vaccinated, yellow for the unvaccinated, and red for the infected, dropped the <q>who was infected by whom</q> part of the graph &mdash; as it would only complicate the model with no real payoff &mdash; and wrote the thing.</p>
                 <p>Generally, I prefer writing stuff that is genuinely useful, even if its scope of usefulness be very narrow. Like <q>learn to recognize numbers spoken in French</q>, or <q>visualize how an infectious disease spreads</q> (I've heard of at least one teacher using my humble little app in class). I made some effort in order to make the code reusable.</p>
                 </section>
                 <hr>
             <section id="tetrx" class="offset-anchor">
-                <h2>The <a href="https://fervero.github.io/html-tetris/">falling bricks game</a></h2>
+               <h2>About the games</h2>
+                <h3>The 
+                    <a href="https://fervero.github.io/html-tetris/">falling bricks game</a>
+                </h3>
                 <a href="https://fervero.github.io/html-tetris/"><img src="img/tetrx.png" alt="screenshot from the Epidemic app" class="screenshot"></a>                
                 <p>That I decided to write as an exercise for myself. The clone of <s>arguably</s> one of the best, most influential games ever. Of course you know it, and you know its name, although I'm not sure if I'm allowed to use it, it is, after all, someone's trade mark. So let's stay with "the falling bricks game".</p>
                 <p> To make it more "frontendy" (if I may be forgiven the <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/BuffySpeak">Buffy speak</a>), I decided against using the canvas. Instead, it's all HTML elements. Every basic square is a <code>div</code>. Not only it forced me to learn quite a lot about positioning, it also had some unforeseen benefit. Calculating elements' sizes, positioning them, even resizing the game itself (it goes up to 18 squares wide - purely an arbitrary choice) takes very few lines of code! I make CSS, and the browser's engine, work for me. You can resize the browser, with a game still in progress, and everything, the well, the bricks, the panels, etc. will be redrawn to best fit the window. Come on, try it. That required exactly zero lines of JavaScript. I believe that's what they call "responsive Web design".</p>
                 <hr>
             </section>
             <section id="shapes">
-                <h2>The Shapes game</h2>
+                <h3>The 
+                    <a href="https://fervero.github.io/Ballz/"><i>Shapes</i> game</a>
+                </h3>
                 <a href="https://fervero.github.io/Ballz/"><img src="img/shapes.png" alt="screenshot from the Epidemic app" class="screenshot screenshot-even"></a>                
                 <p>Not much of a game, that. It was just me learning CSS animations. It's minimalist on purpose. One button, which serves to start the game and then to pause it, no <q>game over</q> ever, no protection from the player cheating and shooting when the game's paused. </p>
                 <p>Notice that the JavaScript is relatively short. The whole script takes some 70-odd lines. I tried to make the CSS do for me as much work as possible.</p>
@@ -97,7 +104,7 @@
                         <p>Well, in the best-case scenario, you're someone <em>at least</em> considering offering me a job. And soon enough you'll be asking the inevitable "how's your English". </p>
                         <p>It's adequate, for all intents and purposes. English is just as essential for a tech/science journalist, as it is for a programmer.</p>
                     </dd>
-                    <dt>Why wouldn't he use some SPA framework?</dt>
+                    <dt>Why wouldn't you use some SPA framework?</dt>
                     <dd>
                         <p>A perfectly valid question, sir or ma'am. The answer is, I'm not fluent in single page applications frameworks. Yet. But yes, I did notice how much code did I have devote for event-handlers, windows, templates. </p>
                         <p>For this reason, among others, Angular, and/or React, are very high on my list of things to learn in the nearest future. When I master one of them, surely some angular and/or reacty stuff will be posted here.  </p>
@@ -109,9 +116,13 @@
                         <p>Well spotted, if you did spot that. It is not. The percents as units of distance cause some rounding errors, no matter how many decimal places. It's a tradeoff I consciously accepted in exchange for the marvelous responsiveness. I use some tricks here in order to mask that. <code>Box-shadows</code>, mostly. </p>
                         <p>Coincidentally, the "shaking" (randomly rotating by a slight angle) the fallen bricks was not intended for that purpose. I did it very early in the development process. Simply, I liked the aesthetics. I thought that the squares, mimicking a haphazard pile of rocks, looked neat (by not looking neat). I hope you agree.</p>  
                     </dd>
+                    <dt>The <q>Shapes</q> game sucks.</dt>
+                    <dd>
+                        Granted. It does. That was only an exercise, to help me master (OK, get to know) CSS animations. It was a conscious decision to use relatively little JavaScript, and write as much of the functionality into CSS. I could make it better with more JavaScript (<em>modifying</em> the animations, instead of just replacing classes and adding an occasional <code>translate</code> here and there &mdash; for starters), but that was not the point of the exercise.
+                    </dd>
                     <dt>"Genuinely useful", you say?</dt>
                     <dd>
-                        <p>About the <a href="numeros.html">Numéros</a> app, yes. Honest to blog. My recognition of rapidly spoken numbers, in the language where "97" is pronounced as <i>quatre-vingt-dix-sept</i> (<q>four twenties-seventeen</q>), noticeably improved. Feel free to use it, if you happen to have the same problem that I did. Hey, for all I know you could have a foreign friend in the process of learning Polish. Maybe they'll find my little app useful.</p>
+                        <p>About the <a href="numeros.html">Numéros</a> app, yes. Honest to blog. My recognition of rapidly spoken numbers, in the language where "97" is pronounced as <i lang='fr'>quatre-vingt-dix-sept</i> (<q>four twenties-seventeen</q>), noticeably improved. Feel free to use it, if you happen to have the same problem that I did. Hey, for all I know you could have a foreign friend in the process of learning Polish. Maybe they'll find my little app useful.</p>
                     </dd>
                     <dt><q>FVR</q>? <q>Fervero</q>? Does it mean anything?</dt>
                     <dd>It's short for <em>Ferocious Veldt Roarer</em>. It's inspired by George R. R. Martin, of the <q>A Song of Ice And Fire</q> fame. I needed a nickname for the <a href="http://asoiaf.westeros.org/">Westeros.org</a> discussion board, and to steal one from a book by GRRM seemed fitting. I'm not explaining the joke further, but I do recommend reading his <q>Tuf Voyaging</q>.</dd>
@@ -121,7 +132,7 @@
         <footer id="contact" class="offset-anchor">
            <h3>Mail me.</h3>
             <p>email: <a href="mailto:maciej.bojko@gmail.com">maciej.bojko@gmail.com</a></p>
-            <h3>Github:</h3>
+            <h3>GitHub:</h3>
             <p><a href="https://github.com/fervero/">https://github.com/fervero/</a></p>
         </footer>
     </body>
