@@ -2,7 +2,6 @@
 <html lang='en'>
     <head>
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-<!--         <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700|Roboto+Mono" rel="stylesheet"> -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/style.css">        
         <meta charset="utf-8">
@@ -12,17 +11,20 @@
     <body>
        <div id="zero"></div>
         <header>
-            <h1>FVR's Home Page</h1>
+           <nav>
+               <h1>FVR's Home Page</h1>
+                <ul class="links-list">
+                    <li class='nav-link'><a href="#about-me">About&nbsp;me</a></li>
+                    <li class='nav-link'><a href="#apps">The&nbsp;apps</a></li>
+                    <li class='nav-link'><a href="#games">The&nbsp;games</a></li>     
+                    <li class='nav-link'><a href="#qiiya">QIIYA</a></li>
+                    <li class='nav-link'><a href="#contact">Contact</a></li>
+                </ul>
+                <span class="nav__widget fa fa-chevron-left" aria-hidden="true" aria-label="hide-show navbar" tabindex="0" id="nav-collapse"></span>
+                    <!-- <span class="fa fa-chevron-left" aria-hidden="true" aria-label="hide-show navbar" tabindex="0"></span> -->
+                
+            </nav>
         </header>
-        <nav>
-            <ul class="links-list">
-                <li class='nav-link'><a href="#zero"><span class="fa fa-home mobile" aria-hidden="true" aria-label="home"></span><span class="desktop">About&nbsp;me</span></a></li>
-                <li class='nav-link'><a href="#numeros"><span class="mobile fa fa-window-restore"></span><span class="desktop">The&nbsp;apps</span></a></li>
-                <li class='nav-link'><a href="#tetrx"><span class="mobile fa fa-futbol-o"></span><span class="desktop">The&nbsp;games</span></a></li>     
-                <li class='nav-link'><a href="#qiiya"><span class="mobile fa fa-question-circle-o"></span><span class="desktop">QIIYA</span></a></li>
-                <li class='nav-link'><a href="#contact"><span class="mobile fa fa-envelope-o"></span><span class="desktop">Contact</span></a></li>
-            </ul>
-        </nav>
         <section id="gadgets" class="gadgets-container offset-anchor">
             <a href="https://fervero.github.io/html-tetris/" id="gadget-tetris" class="gadget">
                 <span id="score" class="score-display">0</span>
@@ -44,19 +46,19 @@
                 </div>
             </a>
         </section>
-        <main id="about-me">
-            <section id="introduction">
-                <h2>About me</h2>
+        <main>
+            <section id="about-me" class="offset-anchor">
+                <h2  tabindex="0">About me</h2>
                 <p>First, take your time with a well-known game, or a small, yet genuinely useful app for language learning. Links above.</p>
                 <p>Now about me. <b>Maciej Bójko</b> is my name. For over a decade I've been a journalist. My field of expertise has been twofold: tech and science. I've written for <q>Gazeta Wyborcza</q>, <q>Dziennik</q> (before it merged and became <q>Dziennik Gazeta Prawna</q>), <q>Focus</q>, <q>Do Rzeczy</q>, <q>Polska - the Times</q>, Polska Agencja Prasowa, and others. As staff writer or freelancer. If you happen to recognize my name - very cool. If not, ah well. Not surprising. I'm not exactly a celebrity.</p>
-                <p>And I've decided that enough is enough. Time to reinvent myself, to decidedly change the career path. Let's be honest: do you recollect reading <em>any</em> press articles about dramatic shortages of journalists? About the huge market demand? About new newspapers and magazines launched, and thriving? About the business booming? Yeah. Right. Me neither. </p>
-                <p>Therefore: programming (beside being a journalist, I'm also a mathematician, or at least that's what written on my bachelor's diploma). And, more specifically, frontend development. I like the quirky JavaScript, with its informal approach. I like the logic of HTML and CSS. I truly enjoy problem solving. All said, the frontend seems like a perfectly reasonable future career. And so I sat down, cracked a book open, and started learning.</p>
+                <p>And I've decided that enough is enough. Time to reinvent myself, to decidedly change the career path. Let's be honest: do you recollect reading <em>any</em> press articles about dramatic shortages of journalists? About the huge market demand? About new newspapers and magazines launched, and thriving? About the business booming? Yeah. Me neither. </p>
+                <p>Therefore: programming (beside being a journalist, I'm also a mathematician, or at least that's what's written on my bachelor's diploma). And, more specifically, frontend development. I like the quirky JavaScript, with its informal approach. I like the logic of HTML and CSS. I truly enjoy problem solving. All said, the frontend seems like a perfectly reasonable future career. And so I sat down, cracked a book open, and started learning.</p>
                 <p>Besides Polish, English, <em>some</em> French, Russian and Spanish (for varying values of <q>some</q>), I speak HTML, CSS, JavaScript, I'm familiar with Git, Bootstrap, SASS, AngularJS, and I'm adding new stuff to that list every week.</p>
                 <p>So, now came the time to put some out my stuff out there. The site is intended to be permanently <em>in progress</em>. I'll be putting more things here as soon as I can show them in public without feeling terribly ashamed. But, what is here now, is this.</p>
                 <hr>
             </section>
-            <section id="numeros" class="offset-anchor">
-                <h2>About the apps.</h2>
+            <section id="apps" class="offset-anchor">
+                <h2 tabindex="0">About the apps.</h2>
                 <h3><i>
                     <a href="https://fervero.github.io/numeros/">Numéros</a>
                 </i></h3>
@@ -71,18 +73,18 @@
                     <a href="https://fervero.github.io/epidemic/index-en.html">Epidemic</a>
                 </i></h3>
                 <a href="https://fervero.github.io/epidemic/index-en.html"><img src="img/epidemia2.png" alt="screenshot from the Epidemic app" class="screenshot screenshot-even"></a>
-                <p>This project of mine was inspired by an animated GIF, visualizing the <a href="https://en.wikipedia.org/wiki/Herd_immunity">herd immunity</a>: basically, even if you yourself can't be vaccinated, <em>everyone else</em> (or close enough) being vaccinated will still protect you. You can see the original GIF <a href="http://imgur.com/gallery/8M7q8#J7LANQ4">here</a>. I ran with the idea. I kept the original colors: blue for the vaccinated, yellow for the unvaccinated, and red for the infected, dropped the <q>who was infected by whom</q> part of the graph &mdash; as it would only complicate the model with no real payoff &mdash; and wrote the thing.</p>
+                <p>This project of mine was inspired by an animated GIF, visualizing the <a href="https://en.wikipedia.org/wiki/Herd_immunity" class="foreign-link">herd immunity</a>: basically, even if you yourself can't be vaccinated, <em>everyone else</em> (or close enough) being vaccinated will still protect you. You can see the original GIF <a href="http://imgur.com/gallery/8M7q8#J7LANQ4" class="foreign-link">here</a>. I ran with the idea. I kept the original colors: blue for the vaccinated, yellow for the unvaccinated, and red for the infected, dropped the <q>who was infected by whom</q> part of the graph &mdash; as it would only complicate the model with no real payoff &mdash; and wrote the thing.</p>
                 <p>Generally, I prefer writing stuff that is genuinely useful, even if its scope of usefulness be very narrow. Like <q>learn to recognize numbers spoken in French</q>, or <q>visualize how an infectious disease spreads</q> (I've heard of at least one teacher using my humble little app in class). I made some effort in order to make the code reusable.</p>
                 </section>
                 <hr>
-            <section id="tetrx" class="offset-anchor">
-               <h2>About the games</h2>
+            <section id="games" class="offset-anchor">
+               <h2 tabindex="0">About the games</h2>
                 <h3>The 
                     <a href="https://fervero.github.io/html-tetris/">falling bricks game</a>
                 </h3>
                 <a href="https://fervero.github.io/html-tetris/"><img src="img/tetrx.png" alt="screenshot from the Epidemic app" class="screenshot"></a>                
                 <p>That I decided to write as an exercise for myself. The clone of <s>arguably</s> one of the best, most influential games ever. Of course you know it, and you know its name, although I'm not sure if I'm allowed to use it, it is, after all, someone's trade mark. So let's stay with "the falling bricks game".</p>
-                <p> To make it more "frontendy" (if I may be forgiven the <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/BuffySpeak">Buffy speak</a>), I decided against using the canvas. Instead, it's all HTML elements. Every basic square is a <code>div</code>. Not only it forced me to learn quite a lot about positioning, it also had some unforeseen benefit. Calculating elements' sizes, positioning them, even resizing the game itself (it goes up to 18 squares wide - purely an arbitrary choice) takes very few lines of code! I make CSS, and the browser's engine, work for me. You can resize the browser, with a game still in progress, and everything, the well, the bricks, the panels, etc. will be redrawn to best fit the window. Come on, try it. That required exactly zero lines of JavaScript. I believe that's what they call "responsive Web design".</p>
+                <p> To make it more "frontendy" (if I may be forgiven the <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/BuffySpeak" class="foreign-link">Buffy speak</a>), I decided against using the canvas. Instead, it's all HTML elements. Every basic square is a <code>div</code>. Not only it forced me to learn quite a lot about positioning, it also had some unforeseen benefit. Calculating elements' sizes, positioning them, even resizing the game itself (it goes up to 18 squares wide - purely an arbitrary choice) takes very few lines of code! I make CSS, and the browser's engine, work for me. You can resize the browser, with a game still in progress, and everything, the well, the bricks, the panels, etc. will be redrawn to best fit the window. Come on, try it. That required exactly zero lines of JavaScript. I believe that's what they call "responsive Web design".</p>
                 <hr>
             </section>
             <section id="shapes">
@@ -96,36 +98,36 @@
             </section>
             <hr>
             <section id="qiiya" class="offset-anchor">
-                <h2>QIIYA</h2>
+                <h2 tabindex="0">QIIYA</h2>
                 <p>As I can't honestly claim I have any "Frequently Asked Questions", I give you "Questions I Imagine You Asking" instead.</p>
                 <dl class="accordion">
-                    <dt>What's with the English?</dt>
+                    <dt tabindex="0">What's with the English?</dt>
                     <dd>
                         <p>Well, in the best-case scenario, you're someone <em>at least</em> considering offering me a job. And soon enough you'll be asking the inevitable "how's your English". </p>
                         <p>It's adequate, for all intents and purposes. English is just as essential for a tech/science journalist, as it is for a programmer.</p>
                     </dd>
-                    <dt>Why wouldn't you use some SPA framework?</dt>
+                    <dt tabindex="0">Why wouldn't you use some SPA framework?</dt>
                     <dd>
                         <p>A perfectly valid question, sir or ma'am. The answer is, I'm not fluent in single page applications frameworks. Yet. But yes, I did notice how much code did I have devote for event-handlers, windows, templates. </p>
                         <p>For this reason, among others, Angular, and/or React, are very high on my list of things to learn in the nearest future. When I master one of them, surely some angular and/or reacty stuff will be posted here.  </p>
                         <p><strong>Update: </strong>I rewrote the <q>Numéros</q> in AngularJS, and what do you know: the same app in  250 lines of code instead of 400 (check out the GitHub: <a href="https://github.com/fervero/angular-numeros">repo</a> and <a href="https://fervero.github.io/angular-numeros/">page</a>). Angular does have its uses.
                         </p>
                     </dd>
-                    <dt>The Falling Bricks Game isn't pixel-perfect.</dt>
+                    <dt tabindex="0">The Falling Bricks Game isn't pixel-perfect.</dt>
                     <dd>
                         <p>Well spotted, if you did spot that. It is not. The percents as units of distance cause some rounding errors, no matter how many decimal places. It's a tradeoff I consciously accepted in exchange for the marvelous responsiveness. I use some tricks here in order to mask that. <code>Box-shadows</code>, mostly. </p>
                         <p>Coincidentally, the "shaking" (randomly rotating by a slight angle) the fallen bricks was not intended for that purpose. I did it very early in the development process. Simply, I liked the aesthetics. I thought that the squares, mimicking a haphazard pile of rocks, looked neat (by not looking neat). I hope you agree.</p>  
                     </dd>
-                    <dt>The <q>Shapes</q> game sucks.</dt>
+                    <dt tabindex="0">The <q>Shapes</q> game sucks.</dt>
                     <dd>
                         Granted. It does. That was only an exercise, to help me master (OK, get to know) CSS animations. It was a conscious decision to use relatively little JavaScript, and write as much of the functionality into CSS. I could make it better with more JavaScript (<em>modifying</em> the animations, instead of just replacing classes and adding an occasional <code>translate</code> here and there &mdash; for starters), but that was not the point of the exercise.
                     </dd>
-                    <dt>"Genuinely useful", you say?</dt>
+                    <dt tabindex="0">"Genuinely useful", you say?</dt>
                     <dd>
                         <p>About the <a href="numeros.html">Numéros</a> app, yes. Honest to blog. My recognition of rapidly spoken numbers, in the language where "97" is pronounced as <i lang='fr'>quatre-vingt-dix-sept</i> (<q>four twenties-seventeen</q>), noticeably improved. Feel free to use it, if you happen to have the same problem that I did. Hey, for all I know you could have a foreign friend in the process of learning Polish. Maybe they'll find my little app useful.</p>
                     </dd>
-                    <dt><q>FVR</q>? <q>Fervero</q>? Does it mean anything?</dt>
-                    <dd>It's short for <em>Ferocious Veldt Roarer</em>. It's inspired by George R. R. Martin, of the <q>A Song of Ice And Fire</q> fame. I needed a nickname for the <a href="http://asoiaf.westeros.org/">Westeros.org</a> discussion board, and to steal one from a book by GRRM seemed fitting. I'm not explaining the joke further, but I do recommend reading his <q>Tuf Voyaging</q>.</dd>
+                    <dt tabindex="0"><q>FVR</q>? <q>Fervero</q>? Does it mean anything?</dt>
+                    <dd>It's short for <em>Ferocious Veldt Roarer</em>. It's inspired by George R. R. Martin, of the <q>A Song of Ice And Fire</q> fame. I needed a nickname for the <a href="http://asoiaf.westeros.org/" class="foreign-link">Westeros.org</a> discussion board, and to steal one from a book by GRRM seemed fitting. I'm not explaining the joke further, but I do recommend reading his <q>Tuf Voyaging</q>.</dd>
                 </dl>
             </section>
         </main>

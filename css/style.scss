@@ -6,9 +6,14 @@ $color-2-t: rgba(41, 40, 36, 0);
 $color-3: #959492;
 $color-4: #ffce2b;
 $color-5: #000080;
+$header-focus: rgba(0,0,255,0.4);
+$link-focus: rgba(255,255,255,0.7);
+$foreign-link-focus: rgba(255,255,255,0.25);
 $nav-height: 8rem;
-$nav-height-plus: 9rem;
-$short-offset: 2rem;
+$nav-height: 5rem;
+$nav-height-plus: 7rem;
+$nav-height-plus: 6rem;
+$body-width: 48rem;
 
 // Colors here.
 
@@ -19,7 +24,7 @@ body {
 header, nav {
     background-color: $color-4;
 }
-nav {
+h1 {
     background-image: -webkit-linear-gradient(left, $color-2-o, $color-2-t);        
     background-image: linear-gradient(to right, $color-2-o, $color-2-t);
 }
@@ -37,6 +42,7 @@ nav {
 a {
     color: $color-2;
 }
+
 #gadget-tetris {
     border-color: $color-4;
 }
@@ -52,46 +58,96 @@ a {
     color: $color-1;
 }
 
+a:focus, {
+    outline: 4px solid $link-focus
+}
+.foreign-link:focus {
+    outline: 4px solid $foreign-link-focus
+}
+
+h2:focus, h3:focus {
+    outline: 4px solid $header-focus
+}
+dt:focus, .nav__widget:focus {
+    outline: 2px solid $header-focus
+}
+
+
 // Not-colors here.
+
 html {
     font-family: 'Montserrat', sans-serif;
 }
 body {
     margin: 0;
 }
-main, footer, .gadgets-container {
-    max-width: 48rem;
+main, footer, .gadgets-container, nav {
+    max-width: $body-width;
 }
 
-header, nav {
-    max-width: 50rem;
+code {
+    font-size: 1.25rem;
 }
 
 header, nav {
     width: 100%;
-    font-size: 75%;
 }
 
 header {
-    margin-bottom: 0;
-}
-nav {
     position: fixed;
-    bottom: 0;
-    opacity: 0.9;
-    margin-top: 0;
-    ul {
-        padding: 0 0 0.3em 0;
-        font-size: 115%;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-around;
+    z-index: 15;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0.5rem 0 0 0;
+    transition: all 0.25s ease-out;
+    opacity: 0.8;
+    &:hover {
+        opacity: 1;
     }
-    // Below: not background, in fact, just underline.
-    background-size: 100% 2px; 
-    background-position: 0 0, 100% 0;
-    background-repeat: no-repeat; 
 }
+h1 {
+    background-size: 100% 2px; 
+    background-position: 0 100%, 100% 100%;
+    background-repeat: no-repeat;
+    max-width: $body-width;
+    padding: 0;
+    margin: 1rem 0 0 2rem;
+}
+
+nav {
+    margin-top: 0;
+}
+
+.nav__widget {
+    display: block;
+    position: absolute;
+    right: 0.2rem;
+    top: 0.6rem;
+    font-size: 1.5rem;
+    background-color: rgba(255,255,255,0.4);
+    padding: 0 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.nav_collapsed {
+    left: -92%;
+    .nav__widget {
+        transform: rotate(180deg);
+        transition: all 0.4s;
+    }
+}
+
+.links-list {
+    padding: 0 0 0.5rem 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;  
+    margin: 0;
+    width: 100%;
+}
+
 .nav-link {
     padding: 0.2em;
     list-style: none;
@@ -101,12 +157,9 @@ nav {
 }
 
 footer {
-    padding-bottom: 5rem;
+    padding-bottom: 35rem;
 }
-h1 {
-    padding: 0.5em;
-    margin-bottom: 0;
-}
+
 h2 {
     padding-left: 2rem;
 }
@@ -120,7 +173,6 @@ a {
     text-decoration: none;
 }
 header a, nav a {
-    font-size: 120%;
     padding: 0 0.1em;
 }
 main a, footer a {
@@ -132,21 +184,18 @@ main a, footer a {
 .abbreviated-header {
     display: block;
 }
-.desktop {
-    display: none;
-}
 em {
     padding-right: 0.1em;
 }
-dl.accordion dt {
+dt {
     cursor: pointer;
     font-size: 110%;
     line-height: 1.8em;
     text-decoration: underline;
 }
 .offset-anchor {
-    margin-top: -$short-offset;
-    padding-top: $short-offset;
+    margin-top: -$nav-height;
+    padding-top: $nav-height-plus;
 }
 #gadget-tetris {
     border-width: 0 2px 2px 2px;
@@ -180,6 +229,7 @@ dl.accordion dt {
 .gadget-numeros {
     height: 10rem;
     margin-left: 0.5rem;
+    margin-right: 0.5rem;
     display: flex;
     flex-flow: column;
 
@@ -196,13 +246,11 @@ dl.accordion dt {
     }
         
     .gadget-header {
-        flex: 1;
-        min-width: 51%;
-  //      line-height: normal;
+        flex: 1 0 51%;
         text-align: center;
         margin: 0 auto;
         padding: 0.5em 0.5em 1em;
-        font-size: 80%;
+        font-size: 0.8rem;
     }
 }
 .game-legend, .gadget-header {
@@ -233,19 +281,8 @@ main, footer, .gadgets-container {
     }
 
     header {
-        position: fixed;
-        top: 0;
-        opacity: 0.9;
-        height: 5rem;
-        z-index: 10;
-        font-size: initial;
     }
-    
-    h1 {
-        padding-left: 1em;
-        text-align: left;
-        padding-top: 0.75em;
-    }    
+
     .screenshot {
         max-width: 50%;
         float: left;
@@ -256,13 +293,8 @@ main, footer, .gadgets-container {
         margin-left: 2rem;
         margin-right: 0;
     }
-    
+/*    
     nav {
-        position: fixed;
-        opacity: 0.9;
-        top: 4.99rem;
-        z-index: 10;
-        bottom: auto;
         &:hover {
             opacity: 1;
         }        
@@ -273,7 +305,7 @@ main, footer, .gadgets-container {
             width: 100%;
         }
     }
-
+*/
     .nav-link {
         min-width: inherit;
         -webkit-box-flex: 1;
@@ -290,18 +322,8 @@ main, footer, .gadgets-container {
         }
     }    
     
-    
-    footer {
-        padding-bottom: 2rem;
-    }
-    
     main {
         padding-top: 2rem;
-    }
-
-    .offset-anchor {
-        padding-top: $nav-height-plus;
-        margin-top: -$nav-height;
     }
     
     #gadgets {
@@ -341,20 +363,4 @@ main, footer, .gadgets-container {
             margin-right: 0.75rem;
         }        
     }  
-}
-
-@media (min-width: 31rem) {
-    .desktop {
-        display: inline-block;
-        padding-left: 0.4em;
-    }
-    .mobile {
-        display: none;
-    }    
-}
-
-@media (min-width: 40rem){
-    nav {
-        font-size: initial;
-    }    
 }

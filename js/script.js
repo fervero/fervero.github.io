@@ -1,7 +1,9 @@
 (function() {
     var $scoreHtml,
         $styleSlot,
+        $nav,
         $well,
+        $collapse,
         maxWidth,
         minWidth,
         currentWidth = 6,
@@ -15,7 +17,7 @@
         animationId = 0;
     
     function unpauseGame() {
-    // Just clear all and every window possibly imposed on the well, restart the loops and reattach the keyboard listener.
+    // Just restart the loops.
         gameLoopId = setTimeout(gameLoop, step);
         animationId = window.requestAnimationFrame(animationLoop);
     }
@@ -37,11 +39,9 @@
         var bestPlace = this.findBestPlace();
         for (var a = 0; a < bestPlace.angle; a++) {
             this.rotate();
-//            this.updateHtml();
         }
         while ( (this.getPos()[0] > bestPlace.position[0] ) && (this.moveLeft()  ) );
         while ( (this.getPos()[0] < bestPlace.position[0] ) && (this.moveRight() ) );
-//            this.updateHtml();
     }
 
     function getNewBrick(well) {
@@ -80,24 +80,19 @@
         getNewBrick(well);
         unpauseGame();
     }
-/*
-    function resizeGame(x) {
-        var width = (100 / x).toFixed(3) + "%",
-            height = (50 / x).toFixed(3) + "%";
-        var newcss = "#well > .brick { width: " +
-            width +
-            "; height: " +
-            height + 
-            "; }";
-        well = Object.create(protoHtmlWell);
-        well.htmlInit(x, $well);
-        step = Math.max(defaultStep / x, 20);
-        $styleSlot.empty().html(newcss);
-        well.fillWithRubble();
-        paused = false;
+
+    function initNavbar() {
+        $collapse = $("#nav-collapse");
+        $nav = $("header");
+        $collapse
+            .on('click', function() {
+                $nav.toggleClass('nav_collapsed');
+            })
+            .on('keydown', function(e) {
+                if(e.key==="Enter")
+                    $(this).click();
+            });
     }
-    
-    */
     
     function initTetrx() {
         // First, cache the DOM elements.
@@ -107,18 +102,23 @@
     // Second, init the logic of the well and the preview window.    
         well = Object.create(protoHtmlWell);
         well.htmlInit(currentWidth, $well);
-        //resizeGame(currentWidth);
         initGame();        
     }
 
     function initAccordion() {
         $(".accordion dd").hide();
-        $(".accordion dt").click(function() {
-            $(this).next().slideToggle(150);
-        })
+        $(".accordion")
+            .on('click', 'dt', function(e){
+                $(this).next().slideToggle(150);
+            })
+        .on('keydown', 'dt', function(e) {
+            if(e.key==="Enter")
+                $(this).click();
+        });
     }
 
     window.onload =  function() {
+        initNavbar();
         initAccordion();
         initTetrx();
     }    
