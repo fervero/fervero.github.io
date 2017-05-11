@@ -112,7 +112,7 @@ h1 {
     background-repeat: no-repeat;
     max-width: $body-width;
     padding: 0;
-    margin: 1rem 0 0 2rem;
+    margin: 1rem 0 0.2rem 2rem
 }
 
 nav {
@@ -137,6 +137,11 @@ nav {
         transform: rotate(180deg);
         transition: all 0.4s;
     }
+}
+
+.v-centered {
+    line-height: 2rem;
+    vertical-align: middle;
 }
 
 .links-list {
@@ -235,16 +240,12 @@ dt {
 
     .fake-button {
         flex: 0 1 20%;
-        margin: 0.3rem 0.5rem 0;
+        margin: 0.15rem 0.5rem;
         padding: 0;
         text-align: center;
-        height: 1.5em;
-        line-height: 1.5em;
-        vertical-align: middle;
-    }
-    
-    .fake-button:last-of-type {
-        margin-bottom: 0.5rem;
+        &:last-of-type {
+            margin-bottom: 0.5rem;            
+        }
     }
         
     .gadget-header {
@@ -354,14 +355,12 @@ main, footer, .gadgets-container {
             flex: 1;
             margin-bottom: 1.4rem;
             height: 2em;
-            line-height: 2em;
+            &:first-of-type {
+                margin-left: 0.75rem;
+            }
+            &:last-of-type {
+                margin-right: 0.75rem;
+            }
         }
-        
-        .fake-button:first-of-type {
-            margin-left: 0.75rem;
-        }
-        .fake-button:last-of-type {
-            margin-right: 0.75rem;
-        }        
     }  
 }
