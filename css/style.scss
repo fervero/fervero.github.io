@@ -234,11 +234,13 @@ dt {
     flex-flow: column;
 
     .fake-button {
-        flex: 1;
-        min-width: 51%;
+        flex: 0 1 20%;
         margin: 0.3rem 0.5rem 0;
         padding: 0;
         text-align: center;
+        height: 1.5em;
+        line-height: 1.5em;
+        vertical-align: middle;
     }
     
     .fake-button:last-of-type {
@@ -246,7 +248,7 @@ dt {
     }
         
     .gadget-header {
-        flex: 1 0 51%;
+        flex: 1 1 15%;
         text-align: center;
         margin: 0 auto;
         padding: 0.5em 0.5em 1em;
@@ -350,10 +352,9 @@ main, footer, .gadgets-container {
         .fake-button {
             min-width: 20%;
             flex: 1;
+            margin-bottom: 1.4rem;
             height: 2em;
             line-height: 2em;
-            vertical-align: middle;
-            margin-bottom: 1.4rem;
         }
         
         .fake-button:first-of-type {
