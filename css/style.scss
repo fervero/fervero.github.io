@@ -80,6 +80,7 @@ html {
 }
 body {
     margin: 0;
+    min-width: 360px;
 }
 main, footer, .gadgets-container, nav {
     max-width: $body-width;
@@ -258,6 +259,12 @@ dt {
 }
 .game-legend, .gadget-header {
     margin-top: 0;
+}
+
+.game-legend {
+    margin-left: 0;
+    padding: 0 0.5rem;
+    font-size: 1rem;
 }
 main, footer, .gadgets-container {
     line-height: 1.5em;
