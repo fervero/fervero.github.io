@@ -51,11 +51,13 @@
                 <p>First, take your time with a well-known game, or a small, yet genuinely useful app for language learning. Links above.</p>
                 <p>Now about me. <b>Maciej Bójko</b> is my name. For over a decade I've been a journalist. My field of expertise has been twofold: tech and science. I've written for <q>Gazeta Wyborcza</q>, <q>Dziennik</q> (before it merged and became <q>Dziennik Gazeta Prawna</q>), <q>Focus</q>, <q>Do Rzeczy</q>, <q>Polska - the Times</q>, Polska Agencja Prasowa, and others. As staff writer or freelancer. If you happen to recognize my name - very cool. If not, ah well. Not surprising. I'm not exactly a celebrity.</p>
                 <p>And I've decided that enough is enough. Time to reinvent myself, to decidedly change the career path. Let's be honest: do you recollect reading <em>any</em> press articles about dramatic shortages of journalists? About the huge market demand? About new newspapers and magazines launched, and thriving? About the business booming? Yeah. Me neither. </p>
-                <p>Therefore: programming (beside being a journalist, I'm also a mathematician, or at least that's what's written on my bachelor's diploma). And, more specifically, frontend development. I like the quirky JavaScript, with its informal approach. I like the logic of HTML and CSS. I truly enjoy problem solving. All said, the frontend seems like a perfectly reasonable future career. And so I sat down, cracked a book open, and started learning.</p>
-                <p>Besides Polish, English, <em>some</em> French, Russian and Spanish (for varying values of <q>some</q>), I speak HTML, CSS, JavaScript, I'm familiar with Git, Bootstrap, SASS, AngularJS, and I'm adding new stuff to that list every week.</p>
+                <p>Therefore: programming (beside being a journalist, I'm also a mathematician, or at least that's what's written on my bachelor's diploma). And, more specifically, front end development. I like the quirky JavaScript, with its informal approach. I like the logic of HTML and CSS. I truly enjoy problem solving. All said, the front end seems like a perfectly reasonable future career. And so I sat down, cracked a book open, and started learning.</p>
+                <p>Besides Polish, English, <em>some</em> French, Russian and Spanish (for varying values of <q>some</q>), I speak HTML, CSS, JavaScript, some PHP and some SQL, I'm familiar with Git, Bootstrap, SASS, AngularJS, React, Gulp, Webpack and I'm adding new stuff to that list every week.</p>
                 <p>So, now came the time to put some out my stuff out there. The site is intended to be permanently <em>in progress</em>. I'll be putting more things here as soon as I can show them in public without feeling terribly ashamed. But, what is here now, is this.</p>
                 <p>The most recent thing would be the <a href="https://fervero.github.io/alcalculator/">Alcalculator</a>, a blood alcohol calculator written in AngularJS (June 11). Code <a href="https://github.com/fervero/alcalculator">here</a>.</p>
+                <p>Actually, the <i>most</i> recent thing is now <a href="https://fervero.github.io/alcalculator-react/">the same app</a>, but this time written in React. Same functionality, seriously different code. Code <a href="https://github.com/fervero/alcalculator-react">here</a>.</p>
             </section>
+            <hr>            
             <hr>            
             <section id="apps" class="offset-anchor">
                 <h2 tabindex="0">About the apps.</h2>
@@ -64,7 +66,6 @@
                         <a href="https://fervero.github.io/numeros/">Numéros</a>
                     </i></h3>
                     <a href="https://fervero.github.io/numeros/"><img src="img/numeros.png" alt="screenshot from the Numeros app" class="screenshot"></a>
-
                     <p>This project of mine was born out of a very specific need. See, as a part of that "reinvent myself" project, I decided to learn some new foreign languages. First and foremost, French (and also Spanish). It's hard! And one of numerous challenges is, understand spoken language. </p>
                     <p>With a sentence, with a piece of dialogue, a description, a story, if you missed something, if you didn't hear right, if you don't know the word - you can still try infer the meaning from context. You might even succeed, or be "close enough". With numbers, however, it isn't so. If you got it wrong, you're doomed. With a phone number, there's no "close enough", there's no "I get the general meaning". And the apps I found in the Google Play store were sadly limited. So I wrote one for myself.</p>
                     <p>Now, it isn't <em>exactly</em> cross-browser. The Web Speech API's support from platform to platform is haphazard. Chrome's, for example, is uniformly excellent. Natural sounding voices, several supported languages. No matter, Windows, Linux or mobile. With other browsers, however - hit and miss. What languages will be supported, I can't know. The application must find out for itself, and handle it. It does. I wrote three other language versions - the French is the basic - to increase the chance that your browser will be able to say <em>something</em> at all. Writing an additional language controller amounts to adding a dozen very straightforward lines. And that includes handling the fact that in French, the telephone number is recited in groups of two digits (or so I've been led to believe), and in English they say the date in the month-day-year order. I hope you appreciate the app's construction.</p>
@@ -120,9 +121,11 @@
                     <p>Just a handful of ready and reusable sliders. They're, at this moment, jQuery-dependent, but it's the CSS that does the heavy lifting. A function setting the slider in motion also returns a tuple of two functions: <code>next()</code> and <code>previous()</code>, which allows to expand their functionality (automatic slide show, for example) with minimum fuss. Code <a href="https://github.com/fervero/slidershow">here</a>.</p>
                     <p>The pun in the title isn't one of my best works.</p>
                 </article>
+                <article>
+                  <h3>The <a href="https://fervero.github.io/alcalculator/">Alcalculator</a> and <a href="https://fervero.github.io/alcalculator-react/">Alcalculator-React</a></h3>
+                </article>
                 <hr>
             </section>
-            
             <section id="qiiya" class="offset-anchor">
                 <h2 tabindex="0">QIIYA</h2>
                 <p>As I can't honestly claim I have any "Frequently Asked Questions", I give you "Questions I Imagine You Asking" instead.</p>
@@ -138,6 +141,7 @@
                         <p>For this reason, among others, Angular, and/or React, are very high on my list of things to learn in the nearest future. When I master one of them, surely some angular and/or reacty stuff will be posted here.  </p>
                         <p><strong>Update: </strong>I rewrote the <q>Numéros</q> in AngularJS, and what do you know: the same app in  250 lines of code instead of 400 (check out the GitHub: <a href="https://github.com/fervero/angular-numeros">repo</a> and <a href="https://fervero.github.io/angular-numeros/">page</a>). Angular does have its uses.
                         </p>
+                        <p><strong>Further update: </strong> and now I rewrote it in React, as well (live page <a href="https://fervero.github.io/alcalculator-react/">here</a>, repo <a href="https://github.com/fervero/alcalculator-react">here</a>).</p>
                     </dd>
                     <dt tabindex="0">The Falling Bricks Game isn't pixel-perfect.</dt>
                     <dd>
